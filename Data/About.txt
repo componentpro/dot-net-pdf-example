@@ -1,0 +1,14 @@
+Company Info and Our Mission
+
+ComponentPro is a wide spectrum and full-cycle US-based provider of ICT solutions and services. It was founded in 2007 by a group of highly qualified programmers and managers with a mission of developing integrated solutions in information and communication systems for enterprises and government organizations.
+ComponentPro, a division of ComponentPro, located in Walnut, California, is a leading provider of File Transfer, Mail, Compression, and SAML - Single Sign On components. We specialize in developing network tools and libraries for Windows developers and providing custom software development and consulting services. Building on its expertise in networking development and Microsoft technologies, ComponentPro helps customers to build competitive applications on their markets. Below are what we provide on each product:
+
+    * Carefully designed: To reduce your learning time, our products are designed with a number of design principles to ensure maximum compatibility and consistency with standards.
+    * Carefully developed: We understand that careful design is not enough, so that we not only run code analysis at daily and weekly automated builds, but also our developers run code analysis every time before checking in.
+    * Fully tested: To ensure the quality of each release, our products are fully tested on various Windows Operating Systems with lots of unit tests, automated tests and manual tests.
+    * Fully documented: To make an ease of use for developers, we provide full documentation and lots of demos a long with each of our product.
+    * Whole-hearted support: We are here and always glad to help you with the best that we have.
+
+Customers
+
+Regardless of size, we have always treated all customers with the same respect and dedication. Many organizations in over 90 countries rely on ComponentPro products for the delivery of web and desktop applications. ComponentPro customers include many Fortune 500 companies, as well as renowned educational, governmental and non-profit institutions. 

@@ -1,0 +1,433 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9A026E2C-E671-418A-BDD4-169BA814448A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PdfDemo</RootNamespace>
+    <AssemblyName>PdfExampleExplorer</AssemblyName>
+    <ApplicationIcon>Pdf.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeFormatter\CLikeFormat.cs" />
+    <Compile Include="CodeFormatter\CodeFormat.cs" />
+    <Compile Include="CodeFormatter\CSharpFormat.cs" />
+    <Compile Include="CodeFormatter\SourceFormat.cs" />
+    <Compile Include="CodeFormatter\VisualBasicFormat.cs" />
+    <Compile Include="CodePreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodePreview.Designer.cs">
+      <DependentUpon>CodePreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSCodeFormatter.cs" />
+    <Compile Include="ExampleControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Converters\HTML to PDF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Converters\HTML to PDF.Designer.cs">
+      <DependentUpon>HTML to PDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Showcase\Invoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Showcase\Invoice.Designer.cs">
+      <DependentUpon>Invoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Showcase\Northwind Report.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Showcase\Northwind Report.Designer.cs">
+      <DependentUpon>Northwind Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CodePreview.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CodePreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Converters\HTML to PDF.resx">
+      <DependentUpon>HTML to PDF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Showcase\Invoice.resx">
+      <DependentUpon>Invoice.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Basic\Conformance Level PDF_A.resx">
+      <DependentUpon>Conformance Level PDF_A.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Basic\Hello World.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Hello World.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Converters\RTF to PDF.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RTF to PDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Document\Digital Signature - Sign Existing PDF.resx">
+      <DependentUpon>Digital Signature - Sign Existing PDF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Document\Digital Signature - Sign New PDF.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Digital Signature - Sign New PDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Document\Document Security.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Document Security.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Graphics\Barcodes.resx">
+      <DependentUpon>Barcodes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Graphics\Beziers.resx">
+      <DependentUpon>Beziers.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Graphics\Brushes.resx">
+      <DependentUpon>Brushes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Graphics\Images.resx">
+      <DependentUpon>Images.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Graphics\Ellipses.resx">
+      <DependentUpon>Ellipses.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Graphics\Layering.resx">
+      <DependentUpon>Layering.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Graphics\Drawing Sharps.resx">
+      <DependentUpon>Drawing Sharps.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Import and Export\Image Extractor.resx">
+      <DependentUpon>Image Extractor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Import and Export\Text Extractor.resx">
+      <DependentUpon>Text Extractor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Modifying Document\Booklet.resx">
+      <DependentUpon>Booklet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Modifying Document\Overlay Documents.resx">
+      <DependentUpon>Overlay Documents.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Modifying Document\Split Documents.resx">
+      <DependentUpon>Split Documents.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Modifying Document\Merge Documents.resx">
+      <DependentUpon>Merge Documents.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Modifying Document\Fill Form.resx">
+      <DependentUpon>Fill Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Modifying Document\Stamp and Watermark.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Stamp and Watermark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Tables\Drawing Tables.resx">
+      <DependentUpon>Drawing Tables.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Text\Multiple Columns Support.resx">
+      <DependentUpon>Multiple Columns Support.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\Text\Drawing Text.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Drawing Text.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSamples\User Interaction\User Interaction.resx">
+      <DependentUpon>User Interaction.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PdfSamples\Basic\Conformance Level PDF_A.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Basic\Conformance Level PDF_A.Designer.cs">
+      <DependentUpon>Conformance Level PDF_A.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Basic\Hello World.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Basic\Hello World.Designer.cs">
+      <DependentUpon>Hello World.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Converters\RTF to PDF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Converters\RTF to PDF.Designer.cs">
+      <DependentUpon>RTF to PDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Document\Digital Signature - Sign Existing PDF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Document\Digital Signature - Sign Existing PDF.Designer.cs">
+      <DependentUpon>Digital Signature - Sign Existing PDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Document\Digital Signature - Sign New PDF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Document\Digital Signature - Sign New PDF.Designer.cs">
+      <DependentUpon>Digital Signature - Sign New PDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Document\Document Security.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Document\Document Security.Designer.cs">
+      <DependentUpon>Document Security.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Document\Document Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Document\Document Settings.Designer.cs">
+      <DependentUpon>Document Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Document\Header and Footer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Document\Header and Footer.Designer.cs">
+      <DependentUpon>Header and Footer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Graphics\Barcodes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Graphics\Barcodes.Designer.cs">
+      <DependentUpon>Barcodes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Graphics\Beziers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Graphics\Beziers.Designer.cs">
+      <DependentUpon>Beziers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Graphics\Brushes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Graphics\Brushes.Designer.cs">
+      <DependentUpon>Brushes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Graphics\Images.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Graphics\Images.Designer.cs">
+      <DependentUpon>Images.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Graphics\Ellipses.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Graphics\Ellipses.Designer.cs">
+      <DependentUpon>Ellipses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Graphics\Layering.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Graphics\Layering.Designer.cs">
+      <DependentUpon>Layering.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Graphics\Drawing Sharps.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Graphics\Drawing Sharps.Designer.cs">
+      <DependentUpon>Drawing Sharps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Import and Export\Image Extractor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Import and Export\Image Extractor.Designer.cs">
+      <DependentUpon>Image Extractor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Import and Export\Text Extractor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Import and Export\Text Extractor.Designer.cs">
+      <DependentUpon>Text Extractor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Modifying Document\Booklet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Modifying Document\Booklet.Designer.cs">
+      <DependentUpon>Booklet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Modifying Document\Overlay Documents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Modifying Document\Overlay Documents.Designer.cs">
+      <DependentUpon>Overlay Documents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Modifying Document\Split Documents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Modifying Document\Split Documents.Designer.cs">
+      <DependentUpon>Split Documents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Modifying Document\Merge Documents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Modifying Document\Merge Documents.Designer.cs">
+      <DependentUpon>Merge Documents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Modifying Document\Fill Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Modifying Document\Fill Form.Designer.cs">
+      <DependentUpon>Fill Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Document\Page Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Document\Page Settings.Designer.cs">
+      <DependentUpon>Page Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Modifying Document\Stamp and Watermark.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Modifying Document\Stamp and Watermark.Designer.cs">
+      <DependentUpon>Stamp and Watermark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Tables\Drawing Tables.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Tables\Drawing Tables.Designer.cs">
+      <DependentUpon>Drawing Tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Text\Bullets And Lists.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Text\Bullets And Lists.Designer.cs">
+      <DependentUpon>Bullets And Lists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Text\Multiple Columns Support.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Text\Multiple Columns Support.Designer.cs">
+      <DependentUpon>Multiple Columns Support.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Text\Drawing Text.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Text\Drawing Text.Designer.cs">
+      <DependentUpon>Drawing Text.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\Text\Right To Left Support.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\Text\Right To Left Support.Designer.cs">
+      <DependentUpon>Right To Left Support.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSamples\User Interaction\User Interaction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfSamples\User Interaction\User Interaction.Designer.cs">
+      <DependentUpon>User Interaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pdf.ico" />
+    <Content Include="res\Folder_blue.ico" />
+    <Content Include="res\Folder_blue.png" />
+    <Content Include="res\Folder_Closed.ico" />
+    <None Include="App.config" />
+    <None Include="EmptyCode.template">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="res\Bottom.png" />
+    <None Include="res\Right.png" />
+    <None Include="res\Pdf.png" />
+    <None Include="res\Mid.png" />
+    <None Include="res\Left.png" />
+    <None Include="res\Help.png" />
+    <None Include="res\_.vb.png" />
+    <None Include="res\_.cs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ComponentPro.Pdf">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>e:\ComponentPro\UltimateStudio v6.1.41211\Bin\Net2_0\ComponentPro.Pdf.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
